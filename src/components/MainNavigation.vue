@@ -1,0 +1,58 @@
+<template>
+  <nav id="main-navigation" class="relative z-40 group">
+    <BrandLogo />
+    <MainMenuToggle />
+    <ul
+      class="absolute z-10 flex flex-col justify-center w-full h-screen px-16 transition-all duration-300 ease-in origin-right bg-red-600 sm:px-6 sm:justify-start gap-y-12 sm:flex-row sm:gap-y-0 md:justify-start sm:items-center sm:relative sm:h-24 md:px-16 gap-x-8 transform-gpu md:h-32 xl:items-start xl:justify-end xl:flex-col xl:gap-x-0 xl:gap-y-6 xl:p-16 xl:w-2/5-screen xl:h-3/4-screen 2xl:h-2/3-screen"
+      :class="{
+        'translate-x-0 opacity-100': $store.state.menu.isOpen,
+        'translate-x-full opacity-0': !$store.state.menu.isOpen
+      }">
+      <li
+        v-for="link in mainNavigationLinks"
+        :key="link.url"
+      >
+        <g-link
+          :to="link.url"
+          @click="$store.commit('CLOSE_MENU')"
+          class="flex items-center text-2xl font-black tracking-widest text-white uppercase sm:text-sm lg:text-lg gap-x-2"
+        >
+          <svg
+            v-if="$route.path == link.url"
+            xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 sm:w-4 sm:h-4 md:w-6 md:h-6" fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+          {{ link.title }}
+        </g-link>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<script>
+import BrandLogo from '@/components/BrandLogo'
+import MainMenuToggle from '@/components/MainMenuToggle'
+
+export default {
+  data() {
+    return {
+      mainNavigationLinks: [
+        { url: '/', title: 'Home' },
+        { url: '/about', title: 'About' },
+        { url: '/resume', title: 'Resume' },
+        { url: '/contact', title: 'Contact' },
+      ],
+    }
+  },
+  components: {
+    BrandLogo,
+    MainMenuToggle,
+  }
+}
+</script>

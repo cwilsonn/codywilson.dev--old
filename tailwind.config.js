@@ -11,11 +11,16 @@ module.exports = {
   theme: {
     extend: {
       width: {
+        '1/5-screen': '20vw',
         '1/4-screen': '25vw',
         '1/3-screen': '33.333vw',
+        '2/5-screen': '40vw',
         '1/2-screen': '50vw',
+        '3/5-screen': '60vw',
         '2/3-screen': '66.666vw',
-        '3/4-screen': '75vw'
+        '3/4-screen': '75vw',
+        '4/5-screen': '80vw',
+        'prose': '65ch'
       },
       height: {
         '1/4-screen': '25vh',
@@ -997,6 +1002,11 @@ module.exports = {
       require("@tailwindcss/custom-forms")
       require("@tailwindcss/typography")
 
+      const sm = theme('screns.sm', {})
+      const md = theme('screens.md', {})
+      const lg = theme('screens.lg', {})
+      const xl = theme('screens.xl', {})
+
       const links = {
         '.link--primary': {
           color: theme('colors.red.600'),
@@ -1024,14 +1034,38 @@ module.exports = {
         // }
       }
 
-      addBase({
-        'h1': { fontSize: theme('fontSize.5xl') },
-        'h2': { fontSize: theme('fontSize.4xl') },
-        'h3': { fontSize: theme('fontSize.3xl') },
-        'h4': { fontSize: theme('fontSize.2xl') },
-        'h5': { fontSize: theme('fontSize.xl') },
-        'h6': { fontSize: theme('fontSize.lg') }
-      })
+      // addBase({
+      //   'h1': {
+      //     `@media (min-width${md})`: {
+      //       fontSize: theme('fontSize.5xl')
+      //     }
+      //   },
+      //   'h2': {
+      //     `@media (min-width${md})`: {
+      //       fontSize: theme('fontSize.4xl')
+      //     }
+      //   },
+      //   'h3': {
+      //     `@media (min-width${md})`: {
+      //       fontSize: theme('fontSize.3xl')
+      //     }
+      //   },
+      //   'h4': {
+      //     `@media (min-width${md})`: {
+      //       fontSize: theme('fontSize.2xl')
+      //     }
+      //   },
+      //   'h5': {
+      //     `@media (min-width${md})`: {
+      //       fontSize: theme('fontSize.xl')
+      //     }
+      //   },
+      //   'h6': {
+      //     `@media (min-width${md})`: {
+      //       fontSize: theme('fontSize.lg')
+      //     }
+      //   }
+      // })
 
       addComponents(links)
     })
