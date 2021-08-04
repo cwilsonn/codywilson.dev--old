@@ -7,7 +7,7 @@
       </PageHero>
       <form
         id="contact"
-        class="grid auto-cols-fr gap-x-8 gap-y-8 lg:w-1/2 2xl:w-1/3"
+        class="grid mt-4 md:mt-8 auto-cols-fr gap-x-8 gap-y-8 xl:w-1/2 2xl:w-1/3"
         name="contact"
         method="POST"
         data-netlify="true"
@@ -23,7 +23,7 @@
             name="name"
             placeholder="Name" />
         </div>
-        <div class="col-span-2 form-item">
+        <div class="col-span-1 md:col-span-2 form-item">
           <label
             for="email"
             class="block mb-2 text-xs font-bold tracking-widest text-gray-500 uppercase"
@@ -34,7 +34,7 @@
             name="email"
             placeholder="Email" />
         </div>
-        <div class="col-span-3 form-item">
+        <div class="col-span-1 md:col-span-3 form-item">
           <label
             for="message"
             class="block mb-2 text-xs font-bold tracking-widest text-gray-500 uppercase"
@@ -48,11 +48,11 @@
           ></textarea>
         </div>
         <div
-          class="col-span-3 form-item"
+          class="col-span-1 form-item"
         >
           <button
             type="submit"
-            class="flex items-center px-4 py-4 text-sm font-bold tracking-widest text-white uppercase transition-colors duration-300 bg-red-600 rounded-sm hover:bg-black focus:bg-black"
+            class="flex items-center justify-center w-full px-4 py-4 text-sm font-bold tracking-widest text-white uppercase transition-colors duration-300 bg-red-600 rounded-sm hover:bg-black focus:bg-black"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
               <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />

@@ -1,9 +1,9 @@
 <template>
   <section aria-labelledby="page-title">
-    <header class="mb-8">
+    <header class="mb-4 md:mb-8">
       <span
         v-if="$slots.subtitle"
-        class="mb-2 text-sm font-bold tracking-wide text-gray-500 uppercase"
+        class="mb-2 text-xs font-bold tracking-widest text-gray-500 uppercase md:text-sm md:tracking-wide"
       >
         <slot name="subtitle"></slot>
       </span>
