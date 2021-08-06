@@ -12,7 +12,7 @@ export default function (Vue, { router, head, isClient, appOptions }) {
   const store = new Vuex.Store({
     state: {
       window: {
-        width: window.innerWidth,
+        width: 0,
       },
       menu: {
         isOpen: true,
