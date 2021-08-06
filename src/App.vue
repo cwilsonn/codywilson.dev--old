@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      windowWidth: window.innerWidth,
+      windowWidth: 0,
       hideMenuThreshold: this.$store.state.menu.hideThreshold,
     }
   },
@@ -36,16 +36,16 @@ export default {
   watch: {
     windowWidth(newWidth, oldWidth) {
       const vm = this
-      vm.determineMenuVisibility(newWidth)
+      vm.determineMenuVisibility()
     }
   },
 
   mounted() {
-    this.$nextTick(() => {
+    const vm = this
+    vm.$nextTick(() => {
       window.addEventListener('resize', this.onResize)
       window.addEventListener('onload', this.onLoad)
-
-      this.determineMenuVisibility(this.windowWidth)
+      vm.determineMenuVisibility()
     })
   },
 
