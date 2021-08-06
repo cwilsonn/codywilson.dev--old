@@ -9,7 +9,7 @@
     </main>
     <span
       id="accent-block"
-      class="absolute bottom-0 left-0 w-32 h-32 bg-red-600 z-n10"
+      class="absolute bottom-0 left-0 hidden w-32 h-32 bg-red-600 md:block z-n10"
     ></span>
   </div>
 </template>

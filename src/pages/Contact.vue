@@ -48,7 +48,7 @@
           ></textarea>
         </div>
         <div
-          class="col-span-1 form-item"
+          class="col-span-1 md:col-span-3 form-item"
         >
           <button
             type="submit"
@@ -72,8 +72,5 @@ export default {
   components: {
     PageHero
   },
-  mounted() {
-    this.$store.commit('OPEN_MENU')
-  }
 }
 </script>

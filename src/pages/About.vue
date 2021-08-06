@@ -25,9 +25,6 @@ export default {
   metaInfo: {
     title: 'codywilson.dev | About me'
   },
-  mounted() {
-    this.$store.commit('OPEN_MENU')
-  },
   components: {
     PageHero,
   }

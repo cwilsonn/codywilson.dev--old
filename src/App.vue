@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       windowWidth: window.innerWidth,
-      hideMenuThreshold: 640,
+      hideMenuThreshold: this.$store.state.menu.hideThreshold,
     }
   },
 
@@ -56,35 +56,19 @@ export default {
 
   methods: {
     onResize() {
-      this.windowWidth = window.innerWidth
-    },
-    onLoad() {
-      this.determineMenuVisibility(this.windowWidth)
-    },
-    determineMenuVisibility(width) {
       const vm = this
-      const path = vm.$route.path
-      const hideMenuPaths = ['/resume']
+      vm.$store.commit('SET_WINDOW_WIDTH', window.innerWidth)
+      vm.determineMenuVisibility()
+    },
+    determineMenuVisibility() {
+      const vm = this
+      const windowWidth = vm.$store.state.window.width
+      const hideThreshold = vm.$store.state.menu.hideThreshold
 
-      console.log(
-        `path: ${path}\n`,
-        `hideMenuPaths:\n`, hideMenuPaths, '\n',
-        `is this path supposed to have a hidden menu? ${hideMenuPaths.includes(path)}`
-      )
-
-      if (hideMenuPaths.includes(path)) {
-        console.log('### hideMenuPaths INCLUDES current path!!! ###')
+      if (windowWidth <= hideThreshold) {
         return vm.$store.commit('CLOSE_MENU')
-      }
-
-      if (width < vm.hideMenuThreshold) {
-        vm.$store.commit('CLOSE_MENU')
-        vm.$store.commit('SET_MENU_BUTTON_VISIBILITY', 'show')
       } else {
-        if (!hideMenuPaths.includes(path)) {
-          vm.$store.commit('OPEN_MENU')
-          vm.$store.commit('SET_MENU_BUTTON_VISIBILITY', 'hover')
-        }
+        return vm.$store.commit('OPEN_MENU')
       }
     }
   }

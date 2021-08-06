@@ -3,7 +3,7 @@
     <BrandLogo />
     <MainMenuToggle />
     <ul
-      class="absolute z-10 flex flex-col justify-center w-full h-screen px-16 transition-all duration-300 ease-in origin-right bg-red-600 sm:px-6 sm:justify-start gap-y-12 sm:flex-row sm:gap-y-0 md:justify-start sm:items-center sm:relative sm:h-24 md:px-16 gap-x-8 transform-gpu md:h-32 xl:items-start xl:justify-end xl:flex-col xl:gap-x-0 xl:gap-y-6 xl:p-16 xl:w-2/5-screen xl:h-3/4-screen 2xl:h-2/3-screen"
+      class="absolute z-10 flex flex-col justify-center w-full h-screen px-16 transition-all duration-300 ease-in origin-right bg-red-600 gap-y-12 sm:px-6 md:px-12 sm:justify-start sm:flex-row sm:gap-y-0 sm:gap-x-6 md:justify-start sm:items-center sm:relative sm:h-24 transform-gpu md:h-32 xl:items-start xl:justify-end xl:flex-col xl:gap-x-0 xl:gap-y-6 xl:p-16 xl:w-2/5-screen xl:h-3/4-screen 2xl:h-2/3-screen"
       :class="{
         'translate-x-0 opacity-100': $store.state.menu.isOpen,
         'translate-x-full opacity-0': !$store.state.menu.isOpen
