@@ -60,6 +60,11 @@ export default {
       vm.$store.commit('SET_WINDOW_WIDTH', window.innerWidth)
       vm.determineMenuVisibility()
     },
+    onLoad() {
+      const vm = this
+      vm.$store.commit('SET_WINDOW_WIDTH', window.innerWidth)
+      vm.determineMenuVisibility()
+    },
     determineMenuVisibility() {
       const vm = this
       const windowWidth = vm.$store.state.window.width
