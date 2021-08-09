@@ -10,8 +10,12 @@
         class="grid mt-4 md:mt-8 auto-cols-fr gap-x-8 gap-y-8 xl:w-1/2 2xl:w-1/3"
         name="contact"
         method="POST"
+        action="/contact"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        @submit.prevent="handleSubmit"
       >
+        <input type="hidden" name="form-name" value="contact">
         <div class="col-span-1 form-item">
           <label
             for="name"
@@ -69,6 +73,53 @@
 import PageHero from '@/components/PageHero'
 
 export default {
+  data() {
+    return {
+      formData: {},
+      formSubmitted: false,
+      submissionMessage: '',
+      submissionStatus: ''
+    }
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&')
+    },
+    handleSubmit(e) {
+      const vm = this
+      vm.formSubmitted = true
+
+      fetch('/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({
+          'form-name': e.target.getAttribute('name'),
+          ...vm.formData
+        }),
+      })
+      .then(() => {
+        // vm.$router.push('/contact')
+        vm.submissionMessage = 'Your message was sent successfully. Thank you for contacting me!'
+        vm.submissionStatus = 'success'
+        console.log(
+          `message: ${vm.submissionMessage}\n`,
+          `status: ${vm.submissionStatus}\n`
+        )
+      })
+      .catch(error => {
+        // vm.$router.push('/contact')
+        vm.submissionMessage = 'Uh-oh! There was a problem sending your message. Please try again later.'
+        vm.submissionStatus = 'error'
+        console.error(error)
+        console.log(
+          `message: ${vm.submissionMessage}\n`,
+          `status: ${vm.submissionStatus}\n`
+        )
+      })
+    }
+  },
   components: {
     PageHero
   },
