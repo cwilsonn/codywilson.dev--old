@@ -39,12 +39,6 @@ module.exports = {
         }
       }
     },
-    // {
-    //   // SEE: https://gridsome.org/plugins/gridsome-plugin-robots-txt
-    //   use: "gridsome-plugin-robots-txt"
-    //   // TODO: Update config prior to production deployment
-    //   // options: {}
-    // }
   ],
   loaderOptions: {
     postcss: {
