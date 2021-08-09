@@ -156,8 +156,9 @@
       <footer id="resume-actions" class="grid grid-flow-row col-span-1 mt-auto mb-0 auto-rows-min md:grid-flow-col md:auto-cols-max md:justify-end lg:col-span-3 gap-y-8 gap-x-8">
         <g-link
           href="/files/cody-wilson-resume-2021.pdf"
+          download
           target="_blank"
-          download="/files/cody-wilson-resume-2021.pdf"
+          rel="noreferrer noopener"
           class="grid items-center w-full grid-flow-col px-4 py-4 text-sm font-bold tracking-widest text-red-600 uppercase transition-colors duration-300 border-2 border-red-600 rounded-sm gap-x-2 auto-cols-max md:w-auto hover:bg-red-600 hover:text-white focus:bg-red-600 focus:text-white"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
