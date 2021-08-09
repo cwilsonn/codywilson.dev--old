@@ -21,22 +21,24 @@ module.exports = {
     // //   // SEE: https://gridsome.org/plugins/@gridsome/source-filesystem
     // //   use: "@gridsome/source-filesystem"
     // // },
-    // {
-    //   // SEE: https://gridsome.org/plugins/@gridsome/plugin-sitemap
-    //   use: "@gridsome/plugin-sitemap"
-    //   // TODO: Update config prior to production deployment
-    //   // TODO: Once client-specific cover letter pages are added, be sure to add those paths to options.exclude
-    //   // options: {
-    //   //   exclude: [],
-    //   //   config: {
-    //   //     "/*": {
-    //   //       changefreq: 'weekly',
-    //   //       priority: 0.5,
-    //   //       lastmod: "2021-XX-XX",
-    //   //     },
-    //   //   }
-    //   // }
-    // },
+    {
+      // SEE: https://gridsome.org/plugins/@gridsome/plugin-sitemap
+      use: "@gridsome/plugin-sitemap"
+      // TODO: Once client-specific cover letter pages are added, be sure to add those paths to options.exclude
+      options: {
+        exclude: [
+          '/404',
+          '/submission-success',
+        ],
+        config: {
+          "/*": {
+            changefreq: 'weekly',
+            priority: 0.5,
+            lastmod: "2021-08-08",
+          },
+        }
+      }
+    },
     // {
     //   // SEE: https://gridsome.org/plugins/gridsome-plugin-robots-txt
     //   use: "gridsome-plugin-robots-txt"
