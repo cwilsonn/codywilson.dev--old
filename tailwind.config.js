@@ -998,15 +998,11 @@ module.exports = {
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
   plugins: [
-    plugin(function ({ addBase, addComponents, theme }) {
+    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
       require("@tailwindcss/custom-forms")
       require("@tailwindcss/typography")
 
-      const sm = theme('screns.sm', {})
-      const md = theme('screens.md', {})
-      const lg = theme('screens.lg', {})
-      const xl = theme('screens.xl', {})
-
+      // Components
       const links = {
         '.link--primary': {
           color: theme('colors.red.600'),
@@ -1022,50 +1018,7 @@ module.exports = {
             color: theme('colors.purple.700')
           }
         }
-        // 'link--nav': {
-        //   color: theme('colors.white'),
-        //   fontWeight: theme('fontWeight.900'),
-        //   letterSpacing: theme('letterSpacing.widest'),
-        //   // textTransform: 'uppercase',
-        //   textDecoration: false,
-        //   ':&hover': {
-        //     textDecoration: 'underline'
-        //   }
-        // }
       }
-
-      // addBase({
-      //   'h1': {
-      //     `@media (min-width${md})`: {
-      //       fontSize: theme('fontSize.5xl')
-      //     }
-      //   },
-      //   'h2': {
-      //     `@media (min-width${md})`: {
-      //       fontSize: theme('fontSize.4xl')
-      //     }
-      //   },
-      //   'h3': {
-      //     `@media (min-width${md})`: {
-      //       fontSize: theme('fontSize.3xl')
-      //     }
-      //   },
-      //   'h4': {
-      //     `@media (min-width${md})`: {
-      //       fontSize: theme('fontSize.2xl')
-      //     }
-      //   },
-      //   'h5': {
-      //     `@media (min-width${md})`: {
-      //       fontSize: theme('fontSize.xl')
-      //     }
-      //   },
-      //   'h6': {
-      //     `@media (min-width${md})`: {
-      //       fontSize: theme('fontSize.lg')
-      //     }
-      //   }
-      // })
 
       addComponents(links)
     })
