@@ -154,8 +154,8 @@
         </section>
       </div>
       <footer id="resume-actions" class="grid grid-flow-row col-span-1 mt-auto mb-0 auto-rows-min md:grid-flow-col md:auto-cols-max md:justify-end lg:col-span-3 gap-y-8 gap-x-8">
-        <g-link
-          href="/static/files/cody-wilson-resume-2021.pdf"
+        <!-- <a
+          href="/static/cody-wilson-resume-2021.pdf"
           download
           target="_blank"
           rel="noreferrer noopener"
@@ -165,7 +165,7 @@
             <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
           Download PDF
-        </g-link>
+        </a> -->
         <g-link
           to="/contact"
           class="flex items-center w-full px-4 py-4 text-sm font-bold tracking-widest text-white uppercase transition-colors duration-300 bg-red-600 rounded-sm md:w-auto hover:bg-black focus:bg-black"
