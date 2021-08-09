@@ -23,7 +23,7 @@ module.exports = {
     // // },
     {
       // SEE: https://gridsome.org/plugins/@gridsome/plugin-sitemap
-      use: "@gridsome/plugin-sitemap"
+      use: "@gridsome/plugin-sitemap",
       // TODO: Once client-specific cover letter pages are added, be sure to add those paths to options.exclude
       options: {
         exclude: [
