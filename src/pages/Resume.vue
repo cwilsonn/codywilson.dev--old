@@ -173,3 +173,23 @@
     </article>
   </Layout>
 </template>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'Resume',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Cody Wilson\'s Resume',
+      },
+      {
+        key: 'og:description',
+        property: 'og:description',
+        content: 'My resume and work history in the web design and development industry.'
+      },
+    ],
+  }
+}
+</script>

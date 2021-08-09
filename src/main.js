@@ -1,6 +1,7 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
+import config from '../gridsome.config'
 import DefaultLayout from '@/layouts/Default.vue'
 import Vuex from 'vuex'
 import './assets/css/headings.css'
@@ -64,6 +65,43 @@ export default function (Vue, { router, head, isClient, appOptions }) {
     // Open menu by default
     return store.commit('OPEN_MENU')
   })
+
+  // SEO head meta information
+  const copyRightNotice = `\u00A9 ${config.author}, ${new Date().getFullYear()}. All rights reserved`
+
+  head.meta.push(
+    {
+      name: 'autor',
+      content: config.author,
+    },
+    {
+      key: 'description',
+      title: 'description',
+      content: config.siteDescription,
+    },
+    {
+      name: 'copyright', content: copyRightNotice,
+    },
+    {
+      key: 'og:type',
+      property: 'og:type',
+      content: 'article',
+    },
+    {
+      key: 'og:description',
+      property: 'og:description',
+      content: config.sitedescription,
+    },
+    {
+      key: 'og:image',
+      property: 'og:image',
+      content: 'https://codywilson.dev/assets/images/logo.png',
+    },
+    {
+      property: 'og:site_name',
+      content: config.siteName,
+    },
+  )
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)

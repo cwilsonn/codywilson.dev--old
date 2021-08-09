@@ -6,9 +6,12 @@
 const autoprefixer = require('autoprefixer')
 
 module.exports = {
-  siteUrl: "https://codywilson.dev",
   siteName: "codywilson.dev",
-  siteDescription: '',
+  siteDescription: 'Personal portfolio, blog, and resume website of Cody Wilson',
+  siteUrl: "https://codywilson.dev",
+  titleTemplate: '%s | codywilson.dev',
+  icon: 'src/favicon.png',
+  author: 'Cody Wilson',
   plugins: [
     {
       use: "gridsome-plugin-tailwindcss"

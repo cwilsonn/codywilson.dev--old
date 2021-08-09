@@ -22,11 +22,23 @@
 import PageHero from '@/components/PageHero'
 
 export default {
-  metaInfo: {
-    title: 'codywilson.dev | About me'
-  },
   components: {
     PageHero,
-  }
+  },
+  metaInfo: {
+    title: 'About Cody Wilson',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'About Cody Wilson',
+      },
+      {
+        key: 'og:description',
+        property: 'og:decription',
+        content: 'I am a self-taught web developer and designer with four years of experience in the industry working for start-ups. My interest in the field stems from a hobbyist pursuit of fine-arts in my childhood, a life-long desire to understand just how things work, and a love for challenging myself.'
+      },
+    ],
+  },
 }
 </script>

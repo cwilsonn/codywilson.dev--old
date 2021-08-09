@@ -18,5 +18,8 @@ export default {
   components: {
     PageHero,
   },
+  metaInfo: {
+    title: 'Submission Success',
+  },
 }
 </script>

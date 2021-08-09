@@ -115,5 +115,20 @@ export default {
   components: {
     PageHero
   },
+  metaInfo: {
+    title: 'Contact',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Contact Cody Wilson',
+      },
+      {
+        key: 'og:description',
+        property: 'og:description',
+        content: 'Contact me to pitch me a job opportunity, learn more about me, or to hire me for freelance work.'
+      }
+    ],
+  },
 }
 </script>

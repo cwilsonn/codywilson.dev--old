@@ -16,11 +16,23 @@
 import PageHero from '@/components/PageHero'
 
 export default {
-  metaInfo: {
-    title: 'codywilson.dev'
-  },
   components: {
     PageHero,
-  }
+  },
+  metaInfo: {
+    title: 'Home',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Home',
+      },
+      {
+        key: 'og:description',
+        property: 'og:description',
+        content: 'I am a remote full-stack web developer and designer with over three years of experience in fast-paced agency and startup environments.'
+      },
+    ],
+  },
 }
 </script>
