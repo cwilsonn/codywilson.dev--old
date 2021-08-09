@@ -155,7 +155,7 @@
       </div>
       <footer id="resume-actions" class="grid grid-flow-row col-span-1 mt-auto mb-0 auto-rows-min md:grid-flow-col md:auto-cols-max md:justify-end lg:col-span-3 gap-y-8 gap-x-8">
         <g-link
-          href="/assets/files/cody-wilson-resume-2021.pdf"
+          href="/static/files/cody-wilson-resume-2021.pdf"
           download
           target="_blank"
           rel="noreferrer noopener"
