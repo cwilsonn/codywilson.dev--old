@@ -94,30 +94,36 @@ export default {
       const vm = this
       vm.formSubmitted = true
 
+      const reqBody = vm.encode({
+        'form-name': e.target.getAttribute('name'),
+        ...vm.formData,
+      })
+
+      console.log(`reqBody:\n`, reqBody, `\n`)
+
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: vm.encode({
-          'form-name': e.target.getAttribute('name'),
-          ...vm.formData
-        }),
+        body: reqBody,
       })
       .then(() => {
-        vm.submissionMessage = 'Your message was sent successfully. Thank you for contacting me!'
-        vm.submissionStatus = 'success'
-        console.log(
-          `message: ${vm.submissionMessage}\n`,
-          `status: ${vm.submissionStatus}\n`
-        )
+        vm.$router.push('/submission-success')
+        // vm.submissionMessage = 'Your message was sent successfully. Thank you for contacting me!'
+        // vm.submissionStatus = 'success'
+        // console.log(
+        //   `message: ${vm.submissionMessage}\n`,
+        //   `status: ${vm.submissionStatus}\n`
+        // )
       })
       .catch(error => {
-        vm.submissionMessage = 'Uh-oh! There was a problem sending your message. Please try again later.'
-        vm.submissionStatus = 'error'
-        console.error(error)
-        console.log(
-          `message: ${vm.submissionMessage}\n`,
-          `status: ${vm.submissionStatus}\n`
-        )
+        vm.$router.push('/404')
+        // vm.submissionMessage = 'Uh-oh! There was a problem sending your message. Please try again later.'
+        // vm.submissionStatus = 'error'
+        // console.error(error)
+        // console.log(
+        //   `message: ${vm.submissionMessage}\n`,
+        //   `status: ${vm.submissionStatus}\n`
+        // )
       })
     }
   },
