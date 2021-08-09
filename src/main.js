@@ -71,6 +71,12 @@ export default function (Vue, { router, head, isClient, appOptions }) {
 
   head.meta.push(
     {
+      rel: 'sitemap',
+      type: 'application/xml',
+      title: 'Sitemap',
+      href: `${config.siteUrl}/sitemap.xml`,
+    },
+    {
       name: 'autor',
       content: config.author,
     },
