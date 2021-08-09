@@ -6,11 +6,10 @@
         <template v-slot:title>Contact Me</template>
       </PageHero>
       <form
-        id="contact"
+        id="contact-form"
         class="grid mt-4 md:mt-8 auto-cols-fr gap-x-8 gap-y-8 xl:w-1/2 2xl:w-1/3"
         name="contact"
         method="POST"
-        action="/contact"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         @submit.prevent="handleSubmit"
@@ -25,6 +24,7 @@
             class="w-full px-3 py-2 text-sm border border-gray-400 rounded-sm"
             type="text"
             name="name"
+            v-model="formData.name"
             placeholder="Name" />
         </div>
         <div class="col-span-1 md:col-span-2 form-item">
@@ -36,6 +36,7 @@
             class="w-full px-3 py-2 text-sm text-gray-500 border border-gray-400 rounded-sm"
             type="text"
             name="email"
+            v-model="formData.email"
             placeholder="Email" />
         </div>
         <div class="col-span-1 md:col-span-3 form-item">
@@ -49,6 +50,7 @@
             name="message"
             cols="30"
             rows="10"
+            v-model="formData.message"
           ></textarea>
         </div>
         <div
@@ -82,6 +84,7 @@ export default {
     }
   },
   methods: {
+    // TODO: Need an onChange event or something to update this.formData to reflect form values.
     encode(data) {
       return Object.keys(data)
         .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -91,16 +94,15 @@ export default {
       const vm = this
       vm.formSubmitted = true
 
-      fetch('/contact', {
+      fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: this.encode({
+        body: vm.encode({
           'form-name': e.target.getAttribute('name'),
           ...vm.formData
         }),
       })
       .then(() => {
-        // vm.$router.push('/contact')
         vm.submissionMessage = 'Your message was sent successfully. Thank you for contacting me!'
         vm.submissionStatus = 'success'
         console.log(
@@ -109,7 +111,6 @@ export default {
         )
       })
       .catch(error => {
-        // vm.$router.push('/contact')
         vm.submissionMessage = 'Uh-oh! There was a problem sending your message. Please try again later.'
         vm.submissionStatus = 'error'
         console.error(error)
