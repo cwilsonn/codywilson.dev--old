@@ -66,16 +66,8 @@ export default {
       const windowWidth = vm.$store.state.window.width
       const hideThreshold = vm.$store.state.menu.hideThreshold
 
-      console.log(
-        `currentPath: ${currentPath}\n`,
-        `hidePaths: \n`, hidePaths, '\n',
-        `windowWidth: ${windowWidth}\n`,
-        `hideThreshold: ${hideThreshold}`
-      )
-
       // Hide menu by default on screens smaller than hide menu threshold value
       if (windowWidth <= hideThreshold) {
-        console.log('windowWidth <= hideThreshold && CLOSE_MENU')
         return vm.$store.commit('CLOSE_MENU')
       }
 
@@ -84,12 +76,10 @@ export default {
         windowWidth > hideThreshold &&
         hidePaths.includes(currentPath)
       ) {
-        console.log('windowWidth > hideThreshold && hidePaths.includes(currentPath) && CLOSE_MENU')
         return vm.$store.commit('CLOSE_MENU')
       }
 
       // Open menu by default
-      console.log('OPEN_MENU')
       return vm.$store.commit('OPEN_MENU')
     }
   }
