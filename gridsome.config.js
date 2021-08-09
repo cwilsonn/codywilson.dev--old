@@ -3,6 +3,8 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const autoprefixer = require('autoprefixer')
+
 module.exports = {
   siteUrl: "https://codywilson.dev",
   siteName: "codywilson.dev",
@@ -39,4 +41,11 @@ module.exports = {
     //   // options: {}
     // }
   ],
+  loaderOptions: {
+    postcss: {
+      plugins: {
+        autoprefixer: {}
+      }
+    }
+  }
 }
