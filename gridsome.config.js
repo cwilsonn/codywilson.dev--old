@@ -16,11 +16,14 @@ module.exports = {
     {
       use: "gridsome-plugin-tailwindcss"
     },
-    // // TODO: Configure once we need to add filesystem-based content entries
-    // // {
-    // //   // SEE: https://gridsome.org/plugins/@gridsome/source-filesystem
-    // //   use: "@gridsome/source-filesystem"
-    // // },
+    {
+      // SEE: https://gridsome.org/plugins/@gridsome/source-filesystem
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: 'content/cover-letters',
+        typeName: 'CoverLetter',
+      }
+    },
     {
       // SEE: https://gridsome.org/plugins/@gridsome/plugin-sitemap
       use: "@gridsome/plugin-sitemap",
@@ -40,6 +43,9 @@ module.exports = {
       }
     },
   ],
+  templates: {
+    CoverLetter: '/cover-letters/:company/:role'
+  },
   loaderOptions: {
     postcss: {
       plugins: {
