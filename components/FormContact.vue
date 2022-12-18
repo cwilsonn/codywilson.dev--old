@@ -5,14 +5,9 @@
         name="contact-form"
         method="POST"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
         action="/submission-success"
     >
         <input type="hidden" name="form-name" value="contact-form" />
-        <div class="hidden">
-            <label for="bot-field">Don't fill this out if you're human:</label>
-            <input name="bot-field" />
-        </div>
         <div class="lg:col-span-1 form-control">
             <label class="label" for="name">Your Name</label>
             <input
@@ -24,7 +19,7 @@
             >
         </div>
         <div class="lg:col-span-2 form-control">
-            <label class="label" for="name">Your Email</label>
+            <label class="label" for="email">Your Email</label>
             <input
                 id="contact-email"
                 class="input input-bordered"
