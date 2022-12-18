@@ -1,24 +1,35 @@
 {
-  "name": "codywilson.dev",
   "private": true,
   "scripts": {
-    "build": "gridsome build",
-    "develop": "gridsome develop",
-    "explore": "gridsome explore"
-  },
-  "dependencies": {
-    "@gridsome/plugin-sitemap": "^0.4.0",
-    "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.6.4",
-    "@tailwindcss/typography": "^0.4.1",
-    "gridsome": "^0.7.0",
-    "gridsome-plugin-tailwindcss": "^4.1.1",
-    "vuex": "^3.6.2"
+    "build": "lint && nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "./node_modules/.bin/eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
+    "lint:fix": "./node_modules/.bin/eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix ."
   },
   "devDependencies": {
-    "@tailwindcss/custom-forms": "^0.2.1",
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.36",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/google-fonts": "^3.0.0-0",
+    "@nuxtjs/tailwindcss": "^6.1.3",
+    "@tailwindcss/typography": "^0.5.8",
+    "@types/date-fns": "^2.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "daisyui": "^2.43.2",
+    "eslint": "^8.29.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "nuxt": "3.0.0",
+    "postcss": "^8.4.20",
+    "prettier": "^2.8.1",
+    "sass": "^1.56.2",
+    "sass-loader": "^13.2.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3"
   }
 }
