@@ -2,13 +2,12 @@
     <form
         id="contact-form"
         class="grid gap-x-6 gap-y-4 lg:grid-cols-3 lg:w-2/3"
-        name="contact"
         method="POST"
         netlify
         data-netlify-honeypot="bot-field"
         action="/submission-success"
     >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact-form" />
         <div class="hidden">
             <label for="bot-field">Don't fill this out if you're human:</label>
             <input name="bot-field" />
