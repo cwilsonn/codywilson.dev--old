@@ -20,15 +20,15 @@
     const menuLinks = [
         {
             name: 'About',
-            href: '#about',
+            href: '/#about',
         },
         {
             name: 'Experience',
-            href: '#skills-experience',
+            href: '/#skills-experience',
         },
         {
             name: 'Contact',
-            href: '#contact',
+            href: '/#contact',
         },
     ];
 </script>
