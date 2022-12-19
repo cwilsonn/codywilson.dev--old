@@ -4,7 +4,7 @@
         class="grid gap-x-6 gap-y-4 lg:grid-cols-3 lg:w-2/3"
         name="contact-form"
         method="POST"
-        action="/submission-success"
+        netlify
         data-netlify="true"
         data-netlify-honeypot="bot-field"
     >
