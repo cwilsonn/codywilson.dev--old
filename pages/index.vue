@@ -23,7 +23,7 @@
                 <div
                     v-for="(skills, category) in data.skills"
                     class="col"
-                    >
+                >
                     <h3 class="mb-6 text-xl font-bold md:text-3xl">
                         {{ category }}
                     </h3>
@@ -55,7 +55,7 @@
             <h2 class="mb-10 text-5xl font-black lg:text-7xl">
                 Contact
             </h2>
-            <form-contact/>
+            <form-contact />
         </section>
     </article>
 </template>

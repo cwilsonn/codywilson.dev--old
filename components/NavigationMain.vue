@@ -1,5 +1,8 @@
 <template>
-    <nav id="navigation-main" class="hidden md:block">
+    <nav
+        id="navigation-main"
+        class="hidden md:block"
+    >
         <ul class="flex flex-row items-center flex-nowrap gap-x-16">
             <li
                 v-for="link in menuLinks"
