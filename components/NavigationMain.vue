@@ -29,9 +29,5 @@
             name: 'Experience',
             href: '/#skills-experience',
         },
-        {
-            name: 'Contact',
-            href: '/#contact',
-        },
     ];
 </script>

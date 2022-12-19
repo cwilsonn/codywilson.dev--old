@@ -51,12 +51,11 @@
                 </div>
             </div>
         </section>
-        <section id="contact">
+        <!-- <section id="contact">
             <h2 class="mb-10 text-5xl font-black lg:text-7xl">
                 Contact
             </h2>
-            <form-contact />
-        </section>
+        </section> -->
     </article>
 </template>
 
